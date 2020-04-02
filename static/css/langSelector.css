@@ -1,0 +1,161 @@
+
+@media all and (min-width: 1px) and (max-width: 767px){
+    .lang-d{
+        display: none !important;
+    }
+ }
+
+
+#desk-navbar .lang-menu-list
+{
+    display: flex !important;
+        padding: 15px;
+        border: 1px solid #525252;
+        /* margin-bottom: -1em; */
+        background-color: rgb(58, 58, 58);
+}
+
+
+
+.lang-d{
+    margin-left: 1em;
+}
+#desk-navbar .lang-button{
+    cursor: pointer;
+    padding: .6em;
+display: flex;
+/* background: #2d2d2d; */
+}
+
+#footer-wrap .lang-button{
+    cursor: pointer;
+display: flex;
+padding: .6em;
+/* background: #2d2d2d; */
+border: 1px solid #292929;
+}
+
+.lang-button > p{
+    margin-right: .5em;
+}
+#desk-navbar .lang-button > div{
+    display: none;
+}
+
+#desk-navbar  .lang-button p{
+    display: none;
+}
+
+#footer-wrap .lang-button > div{
+    font-size: .5em;
+    cursor: pointer;
+}
+
+
+
+#footer-wrap .lang-menu-list{
+    display: flex !important;
+    padding: 15px;
+    border: 1px solid #525252;
+    /* margin-bottom: -1em; */
+    /* top: 10px; */
+    background-color: rgb(58, 58, 58);
+}
+
+.lang-menu-list ul{
+padding: 0 15px;}
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+#desk-navbar .lang-menu-list::before{
+    
+    border-color: #525252;
+    border-bottom-color: #525252 !important;
+    border-width: 10px !important;
+    margin-left: -10px;
+}
+#desk-navbar .lang-menu-list::before{
+    top: 100%;
+    border: solid transparent;
+    top: -0px;
+content: " ";
+height: 0;
+left: 50%;
+pointer-events: none;
+position: absolute;
+width: 0;
+z-index: 2001;
+}
+
+.hover-menu-lang.false{
+    display: none;}
+
+
+
+    #desk-navbar .hover-menu-lang.true{
+        transform: translateX( calc(-50% + 1.30em));
+    display: flex;
+    position: absolute;
+    padding-top: 20px;
+    top: 40px;
+}
+
+#footer-wrap .hover-menu-lang.true{
+    display: flex;
+    position: absolute;
+    padding-bottom: 20px;
+    transform: translateY(-65px);
+  
+
+}
+
+#footer-wrap .lang-menu-list::before{
+    
+    border-color: #525252;
+    border-bottom-color: #525252 !important;
+    border-width: 10px !important;
+    margin-left: -10px;
+    transform: rotate(180deg);
+}
+#footer-wrap .lang-menu-list::before{
+ 
+    border: solid transparent;
+bottom: 0px;
+content: " ";
+height: 0;
+left: 50%;
+pointer-events: none;
+position: absolute;
+width: 0;
+z-index: 2001;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lang-menu-list > ul > a{
+    color: #ababab;
+}
+.lang-menu-list > ul > a:hover{
+    color: white;
+}

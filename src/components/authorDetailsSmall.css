@@ -1,0 +1,89 @@
+.dark-mode .post-author{
+    color: #afafaf;
+   
+}
+.light-mode .post-author{
+    color: #202020;
+}
+
+.post-author{
+    font-weight: 300;
+    font-size: 0.9rem;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.academy-content .post-author{
+    width: 15rem;
+}
+
+.dark-mode .post-author .userLink{
+    color: #afafaf;
+}
+
+.light-mode .post-author .userLink{
+    color: #848484;
+}
+
+.light-mode .post-wrapper .post-author .userLink{
+    color: #5c5c5c;
+}
+
+
+.post-author .userLink{
+    color: #afafaf;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+ .post-author .userPhoto{
+    flex: 0 0 auto;
+    border-radius: 48px;
+    overflow: hidden;
+    margin-right: 5px;
+    width: 48px;
+    height: 48px;
+}
+
+
+
+.dark-mode .post-author .userName{
+    color: white;
+    
+}
+.light-mode .post-author .userName{
+    color: #202020;
+    
+}
+.post-author .userName{
+    font-weight: 400;
+    padding: 2px;
+    color: white;
+    
+}
+
+
+
+
+
+
+
+.dark-mode .post-author .postDate{
+    color: #848484;
+}
+
+.light-mode .post-author .postDate{
+    color: #707070;
+}
+
+.post-author .postDate{
+    font-weight: 300;
+    padding: 2px;
+    font-family: Roboto Condensed, sans-serif;
+}

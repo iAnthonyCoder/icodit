@@ -1,0 +1,23 @@
+- id: "maria795"
+  name: 'Maria Silva'
+  username: 'maria795'
+  bio: First curious cat at Gatsby Curious Community. Blogs at dev.wgao19.cc.First curious cat at Gatsby Curious Community. Blogs at dev.wgao19.ccFirst curious cat at Gatsby Curious Community. Blogs at dev.wgao19.cc
+  title: 'Backend Engineer at Some Company'
+  twitter: 'www.twitter/maria795'
+  facebook: 'www.facebook/maria795'
+  instagram: 'www.instagram/maria795'
+  linkedin: 'www.linkedin/maria795'
+  github: 'www.github/maria795'
+  photo: './maria795.png'
+
+- id: 'anthony952'
+  name: 'Anthony Medina'
+  username: 'anthony952'
+  bio: Very curious about this world and blogging whenever learning something new Very curious about this world and blogging whenever learning something new Very curious about this world and blogging whenever learning something new
+  title: 'UI Engineer at Some Company'
+  twitter: 'www.twitter/anthony952'
+  facebook: 'www.facebook/anthony952'
+  instagram: 'www.instagram/anthony952'
+  linkedin: 'www.linkedin/anthony952'
+  github: 'www.github/anthony952'
+  photo: './anthony952.jpg'
