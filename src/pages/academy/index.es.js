@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../../layouts/en"
-import SEO from "../../components/seo"
+import SEO from "../../components/SEO"
 import Academy from "../../templates/academy"
 import { graphql } from 'gatsby'
 import messages from '../../data/messages/es';

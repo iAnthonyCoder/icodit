@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import Facebook from './Facebook'
+import Twitter from './Twitter'
 // import Twitter from './Twitter'
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
@@ -189,6 +190,7 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, postUrl, arti
         locale={lang}
         name={"anthony958"}
       /> 
+      <Twitter title={seo.title} image={seo.image} desc={seo.description} username={"anthony952"} /> 
 {/* 
       <Helmet
       htmlAttributes={{
@@ -272,7 +274,7 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, postUrl, arti
 
 
       
-     {/* <Twitter title={seo.title} image={seo.image} desc={seo.description} username={twitter} />  */}
+     {/*  */}
     </>
   )
 }

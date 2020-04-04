@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../layouts/en"
-// import SEO from "../components/seo"
 import Home from '../templates/home';
 import messages from '../data/messages/en';
 

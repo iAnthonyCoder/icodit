@@ -1,5 +1,5 @@
-import '@trendmicro/react-dropdown/dist/react-dropdown.css';
-import Dropdown from '@trendmicro/react-dropdown';
+import './node_modules/@trendmicro/react-dropdown/dist/react-dropdown.css';
+import Dropdown from './node_modules/@trendmicro/react-dropdown';
 import '../buttons'; // Ensure CSS dependency
 
 export default Dropdown;
@@ -9,4 +9,4 @@ export {
     DropdownMenuWrapper,
     MenuItem,
     DropdownButton, Space
-} from '@trendmicro/react-dropdown';
+} from './node_modules/@trendmicro/react-dropdown';

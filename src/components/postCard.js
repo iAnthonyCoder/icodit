@@ -4,7 +4,7 @@ import React from "react";
 import AuthorDetailsSmall from './authorDetailsSmall'
 import { FaComments } from "react-icons/fa";
 import { GoTag } from "react-icons/go";
-import './postCard.css';
+import '../../static/css/postCard.css';
 
 export default function PostCard (props){
 

@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import Img from "gatsby-image"
 import React from "react";
 import { FaComments } from "react-icons/fa";
-import './postCardSmall.css';
+import '../../static/css/postCardSmall.css';
 
 export default function PostCard (props){
 

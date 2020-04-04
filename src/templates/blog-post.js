@@ -7,7 +7,7 @@ import { IoIosArrowForward,  IoIosArrowBack} from "react-icons/io";
 import AuthorDetailsSmall from './../components/authorDetailsSmall'
 import PostCard from './../components/postCard'
 import UserCard from '../components/userCard'
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import {
 	FacebookShareButton,
 	LinkedinShareButton,

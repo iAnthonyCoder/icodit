@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import Img from "gatsby-image"
 import React from "react";
-import './authorDetailsSmall.css';
+import '../../static/css/authorDetailsSmall.css';
 
 export default function AuthorDetailsSmall (props){
 
