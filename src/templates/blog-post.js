@@ -74,20 +74,18 @@ export default ({ data, location, pageContext }) => {
   const backgroundStyle= {
     backgroundImage: `url(${post.frontmatter.featuredImage.childImageSharp.fluid.src})`
   }
-  const stickerInitialState = "";
+  const stickerInitialState = "true";
   const [ sticker, setSticker ] = React.useState(stickerInitialState)
   
   
   React.useLayoutEffect(() => {
 
     var sticky=""
-    setSticker("true");
-
+  
     const mainNav = document.getElementById("desk-navbar");
     const stickyNav = stickyNavbarPostlist;
     const body = document.getElementsByTagName("body")[0];
    
-    
     const checkSticky = () => {
       if(stickyNav.current.getBoundingClientRect().top < 60){sticky = true};
       if(contentDiv.current.getBoundingClientRect().top >= 60){sticky = false};
@@ -144,18 +142,19 @@ export default ({ data, location, pageContext }) => {
   
   return (
     <Layout customSEO>
-      {
-        (data.currentPost.frontmatter.title) ? (<SEO
-          title={`${data.currentPost.frontmatter.title} | ${metadata.siteMetadata.titleAlt}`}
+     
+      <SEO
+          title={data.currentPost.frontmatter.title}
           desc={data.currentPost.frontmatter.description}
           banner={post.frontmatter.featuredImage.childImageSharp.fluid.src}
           pathname={location.pathname}
           node={data.currentPost.frontmatter}
           lang={langKey}
           author={post.frontmatter.author.name}
+          url={fullUrl}
           article
-        />) :("")
-      }
+      />
+      
       
       <main className="post-content-c">
         {/* <div id="desk-navbar-sep"></div> */}

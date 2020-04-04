@@ -45,7 +45,7 @@ function Layout({ children, location, i18nMessages, customSEO }) {
   `)
 
   
-  console.log(data)
+
 
 
  

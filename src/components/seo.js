@@ -7,10 +7,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
-const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) => {
+const SEO = ({ title, desc, banner, pathname, node, lang,  author, postUrl, article }) => {
 
 
-
+  
   const { site } = useStaticQuery(query)
 
   const {
@@ -42,8 +42,8 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) =>
 
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
-    '@type': 'article',
-    url: `${siteUrl}${pathname || ''}`,
+    '@type': 'WebPage',
+    url: siteUrl,
     headline,
     inLanguage: lang,
     mainEntityOfPage: siteUrl,
@@ -51,20 +51,20 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) =>
     name: defaultTitle,
     author: {
       '@type': 'Person',
-      name: author,
+      name: "Anthony Medina",
     },
     copyrightHolder: {
       '@type': 'Person',
-      name: author,
+      name: "Anthony Medina",
     },
-    copyrightYear: '2019',
+    copyrightYear: '2020',
     creator: {
       '@type': 'Person',
-      name: author,
+      name: "Anthony Medina",
     },
     publisher: {
       '@type': 'Person',
-      name: author,
+      name: "Anthony Medina",
     },
     datePublished: '2019-01-18T10:30:00+01:00',
     dateModified: buildTime,
@@ -74,7 +74,7 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) =>
     },
   }
 
-  console.log(schemaOrgWebPage);
+  
 
   // Initial breadcrumb list
 
@@ -118,23 +118,23 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) =>
       },
       datePublished: node.first_publication_date,
       dateModified: node.last_publication_date,
-      description: seo.description,
+      description: desc,
       headline: seo.title,
       inLanguage: lang,
-      url: seo.url,
-      name: seo.title,
+      url: postUrl,
+      name: title,
       image: {
         '@type': 'ImageObject',
-        url: seo.image,
+        url: `${siteUrl}${banner}`,
       },
-      mainEntityOfPage: seo.url,
+      mainEntityOfPage: postUrl,
     }
     // Push current blogpost into breadcrumb list
     itemListElement.push({
       '@type': 'ListItem',
       item: {
-        '@id': seo.url,
-        name: seo.title,
+        '@id': postUrl,
+        name: title,
       },
       position: 2,
     })

@@ -24,7 +24,7 @@ import { faMoon } from '@fortawesome/free-solid-svg-icons'
 
 export default function Academy (props) {
 
-  console.log(props);
+
   
   if (window.localStorage.getItem("postPreviewMode") === null) {
     window.localStorage.setItem('postPreviewMode', 'card');

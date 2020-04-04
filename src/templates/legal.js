@@ -8,7 +8,6 @@ export default ({ data, location, pageContext }) => {
 
 
  
-console.log(data)
 
 
 /* eslint-disable */

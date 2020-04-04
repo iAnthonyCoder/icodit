@@ -724,16 +724,17 @@ margin: 1px;
     bottom: 0;
 }
 
+#post-title-background > div.sticky-navbar{
+        background: rgba(0, 0, 0, 0);
+    position: relative;
+    height: initial;
+}
+
 #post-title-background .sticky-navbar{
         z-index: 1000;
-
     width: 100%;
     display: flex;
-
     align-items: center;
-
-
-
     transition: all .5s ease;
     top: 0;
     bottom: 0;
