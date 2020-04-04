@@ -8,6 +8,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
 const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) => {
+
+  console.log(author)
+
+
   const { site } = useStaticQuery(query)
 
   const {
@@ -39,8 +43,8 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) =>
 
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
-    '@type': 'WebPage',
-    url: siteUrl,
+    '@type': 'article',
+    url: seo.url,
     headline,
     inLanguage: lang,
     mainEntityOfPage: siteUrl,

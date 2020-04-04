@@ -11,7 +11,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import Helmet from 'react-helmet';
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
 import 'intl';

@@ -7,7 +7,7 @@ import { IoIosArrowForward,  IoIosArrowBack} from "react-icons/io";
 import AuthorDetailsSmall from './../components/authorDetailsSmall'
 import PostCard from './../components/postCard'
 import UserCard from '../components/userCard'
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import {
 	FacebookShareButton,
 	LinkedinShareButton,
@@ -144,16 +144,19 @@ export default ({ data, location, pageContext }) => {
   
   return (
     <Layout customSEO>
-      <SEO
-        title={`${data.currentPost.frontmatter.title} | ${metadata.siteMetadata.titleAlt}`}
-        desc={data.currentPost.frontmatter.description}
-        banner={post.frontmatter.featuredImage.childImageSharp.fluid.src}
-        pathname={location.pathname}
-        node={data.currentPost.frontmatter}
-        lang={langKey}
-        author={post.frontmatter.author.name}
-        article
-      />
+      {
+        (data.currentPost.frontmatter.title) ? (<SEO
+          title={`${data.currentPost.frontmatter.title} | ${metadata.siteMetadata.titleAlt}`}
+          desc={data.currentPost.frontmatter.description}
+          banner={post.frontmatter.featuredImage.childImageSharp.fluid.src}
+          pathname={location.pathname}
+          node={data.currentPost.frontmatter}
+          lang={langKey}
+          author={post.frontmatter.author.name}
+          article
+        />) :("")
+      }
+      
       <main className="post-content-c">
         {/* <div id="desk-navbar-sep"></div> */}
         <section id="post-title-background" className="background" style={ backgroundStyle }>
