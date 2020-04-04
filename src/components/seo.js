@@ -9,7 +9,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) => {
 
-  console.log(author)
 
 
   const { site } = useStaticQuery(query)
@@ -44,7 +43,7 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, article }) =>
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
     '@type': 'article',
-    url: seo.url,
+    url: `${siteUrl}${pathname || ''}`,
     headline,
     inLanguage: lang,
     mainEntityOfPage: siteUrl,
