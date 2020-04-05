@@ -9,20 +9,18 @@ const IndexPage = ({data, location}) => (
   <Layout>
     <SEO
           title={"Academy - ICodit"}
-          desc={"Tutorials which will become you in a great developer"}
+          desc={"Tutoriales que te convertiran en un gran desarrollador"}
           pathname={location.pathname}
           lang={"en"}
       />
     <Academy i18nMessages={messages} data={data} posts={data.allMarkdownRemark.edges}/>
   </Layout>
 )
-
 export default IndexPage
-
 
 export const query = graphql`
   query IndexEnQuery {
-    allMarkdownRemark(filter: { fields:{ langKey : { eq:"en" }}, frontmatter: {type: {eq: "tutorial"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: { fields:{ langKey : { eq:"en" }},frontmatter: {type: {eq: "tutorial"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
@@ -31,20 +29,19 @@ export const query = graphql`
             title
             tags
             category
-            timeread
             featured
-            date(formatString: "DD MMM, YYYY")
+            date(formatString: "DD MMMM, YYYY")
             featuredImage {
               childImageSharp {
-                fluid{
+                fluid {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
             author {
               bio
-              name
               id
+              name
               twitter
               photo {
                 childImageSharp {

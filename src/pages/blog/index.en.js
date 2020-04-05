@@ -4,23 +4,22 @@ import SEO from "../../components/SEO"
 import Blog from "../../templates/blog"
 import { graphql } from 'gatsby'
 
-function IndexPage({data}) {
-  
-  // const [posts, setPosts] = React.useState();
-  
-  return(
+const IndexPage = ({data, location}) => (
   <Layout>
-    <SEO title="Home" />
-    <Blog data={data} posts={data.allMarkdownRemark.edges}/>
+    <SEO
+          title={"Blog - ICodit"}
+          desc={"News and articles of great interest to developers and technology amateurs"}
+          pathname={location.pathname}
+          lang={"en"}
+      />
+    <Blog posts={data.allMarkdownRemark.edges}/>
   </Layout>
-)}
-
+)
 export default IndexPage
-
 
 export const query = graphql`
   query IndexEnQuerya {
-    allMarkdownRemark(filter: { fields:{ langKey : { eq:"en" }}, frontmatter: {type: {eq: "blog"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: { fields:{ langKey : { eq:"en" }},frontmatter: {type: {eq: "blog"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
@@ -29,19 +28,16 @@ export const query = graphql`
             title
             tags
             category
-            timeread
-
-            date(formatString: "DD MMM, YYYY")
+            date(formatString: "DD MMMM, YYYY")
             featuredImage {
               childImageSharp {
-                fluid{
+                fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
             author {
               bio
-              name
               id
               twitter
               photo {

@@ -59,7 +59,7 @@ export const query = graphql`
         }
       }
     }
-    featuredPosts: allMarkdownRemark(limit:5, filter: { fields:{ langKey : { eq:"en" }}, frontmatter: {type: {eq: "tutorial"}, featured: {eq: "true"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+    featuredPosts: allMarkdownRemark(limit:5, filter: { fields:{ langKey : { eq:"es" }}, frontmatter: {type: {eq: "tutorial"}, featured: {eq: "true"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {

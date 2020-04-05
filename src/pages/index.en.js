@@ -9,7 +9,6 @@ const IndexPage = ({data}) => (
    <Home 
     i18nMessages={messages}
     posts={data}
-   
    />
   </Layout>
 )

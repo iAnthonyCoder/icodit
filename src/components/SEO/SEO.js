@@ -10,7 +10,7 @@ import Twitter from './Twitter'
 
 const SEO = ({ title, desc, banner, pathname, node, lang,  author, postUrl, article }) => {
 
-
+console.log(title);
   
   const { site } = useStaticQuery(query)
 
@@ -36,7 +36,7 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, postUrl, arti
     image: `${siteUrl}${banner || defaultBanner}`,
     url: `${siteUrl}${pathname || ''}`,
   }
-
+  console.log(seo.image)
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
