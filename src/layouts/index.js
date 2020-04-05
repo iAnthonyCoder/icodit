@@ -29,12 +29,16 @@ const lang = window.navigator.language.substr(0,2) || window.navigator.userLangu
 
 
 
-function Layout({ children, location, i18nMessages, customSEO }) {
+function Layout(props) {
+  
+  const { children, location, i18nMessages, customSEO, lang } = props;
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          description
+          headline
           languages {
             defaultLangKey
             langs
@@ -82,14 +86,14 @@ function Layout({ children, location, i18nMessages, customSEO }) {
             messages={i18nMessages}
       >
     
-        <Helmet
+        {/* <Helmet
                 title="ICodit"
                 meta={[
                   { name: 'description', content: 'Sample' },
                   { name: 'keywords', content: 'sample, something' },
                 ]}
-        />
-        {!customSEO && <SEO />}
+        /> */}
+        {!customSEO && <SEO lang={lang} />}
         <Header siteTitle={data.site.siteMetadata.title} lang={langKey} langs={langsMenu}/>
         
             <main>{children}</main>

@@ -1,13 +1,18 @@
 import React from "react"
-import Layout from "../../layouts/en"
+import Layout from "../../layouts/es"
 import SEO from "../../components/SEO"
 import Academy from "../../templates/academy"
 import { graphql } from 'gatsby'
 import messages from '../../data/messages/es';
 
-const IndexPage = ({data}) => (
+const IndexPage = ({data, location}) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+          title={"Academia - ICodit"}
+          desc={"Tutoriales que te convertiran en un gran desarrollador"}
+          pathname={location.pathname}
+          lang={"es"}
+      />
     <Academy i18nMessages={messages} data={data} posts={data.allMarkdownRemark.edges}/>
   </Layout>
 )

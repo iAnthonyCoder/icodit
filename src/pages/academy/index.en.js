@@ -5,13 +5,19 @@ import Academy from "../../templates/academy"
 import { graphql } from 'gatsby'
 import messages from '../../data/messages/en';
 
-function IndexPage({data}) {
+function IndexPage({data, location, lang}) {
   
+  console.log(lang)
   // const [posts, setPosts] = React.useState();
-  
+  console.log(data)
   return(
   <Layout>
-    <SEO title="Home" />
+    <SEO
+          title={"Academy - ICodit"}
+          desc={"Tutorials which will become you in a great developer"}
+          pathname={location.pathname}
+          lang={"en"}
+      />
     <Academy i18nMessages={messages} data={data} posts={data.allMarkdownRemark.edges}/>
   </Layout>
 )}

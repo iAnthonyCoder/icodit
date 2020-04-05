@@ -41,6 +41,7 @@ const SEO = ({ title, desc, banner, pathname, node, lang,  author, postUrl, arti
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
 
+  console.log(lang);
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',

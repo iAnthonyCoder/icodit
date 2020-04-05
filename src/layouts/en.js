@@ -8,5 +8,6 @@ export default (props) => (
   <Layout
     {...props}
     i18nMessages={messages}
+    lang={"en"}
   />
 );
