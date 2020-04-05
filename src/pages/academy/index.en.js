@@ -5,12 +5,7 @@ import Academy from "../../templates/academy"
 import { graphql } from 'gatsby'
 import messages from '../../data/messages/en';
 
-function IndexPage({data, location, lang}) {
-  
-  console.log(lang)
-  // const [posts, setPosts] = React.useState();
-  console.log(data)
-  return(
+const IndexPage = ({data, location}) => (
   <Layout>
     <SEO
           title={"Academy - ICodit"}
@@ -20,7 +15,7 @@ function IndexPage({data, location, lang}) {
       />
     <Academy i18nMessages={messages} data={data} posts={data.allMarkdownRemark.edges}/>
   </Layout>
-)}
+)
 
 export default IndexPage
 
