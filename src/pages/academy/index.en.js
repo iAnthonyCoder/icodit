@@ -9,7 +9,7 @@ const IndexPage = ({data, location}) => (
   <Layout>
     <SEO
           title={"Academy - ICodit"}
-          desc={"Tutoriales que te convertiran en un gran desarrollador"}
+          desc={"Tutorials that will make you a great developer"}
           pathname={location.pathname}
           lang={"en"}
       />

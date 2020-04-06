@@ -731,7 +731,7 @@ margin: 1px;
 }
 
 #post-title-background .sticky-navbar{
-        z-index: 1000;
+        z-index: 50;
     width: 100%;
     display: flex;
     align-items: center;
@@ -741,7 +741,7 @@ margin: 1px;
 }
 
 .dark-mode #post-title-background .sticky-navbar .backgrounded{
-        z-index: 1000;
+        z-index: 50;
     height: 60px;
     width: 100%;
     display: flex;
@@ -754,7 +754,7 @@ margin: 1px;
 }
 
 .light-mode .academy-list  .sticky-navbar{
-        z-index: 1000;
+        z-index: 50;
         height: 60px;
         width: 100%;
         display: flex;
@@ -1819,7 +1819,7 @@ background-color: #cccccc;
         border-radius: 5px;
         background-color: #696969;
         align-self: center;
-        border-top: inset 1px solid red;
+
 }
 #mouse-cont
 {

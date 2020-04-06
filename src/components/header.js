@@ -31,6 +31,7 @@ const Header = injectIntl(({siteTitle, intl, langs}) => {
 	const [ hamburgerActive, setHamburgerActive] = useState(hamburgerActiveInitialState);
 
 	const handleHamburgerStatus = () => {
+		const body = document.getElementsByTagName("body")[0];
 		setHamburgerActive(!hamburgerActive);
 	}
 

@@ -7,7 +7,6 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faWhatsapp, faFacebook, faTwitter, faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Sitemap } from '../data/sitemap';
 import {injectIntl} from 'react-intl';
-import { window } from 'browser-monads';
 import '../../static/css/footer.css';
 import LangSelector from "./langSelector";
 import GitHubButton from 'react-github-btn'

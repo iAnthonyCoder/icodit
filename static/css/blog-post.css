@@ -44,6 +44,15 @@
     }
 }
 @media all and (min-width: 1px) and (max-width: 767px){ 
+
+    .academy-content .userCard .userSocials {
+
+
+        display: flex;
+      
+        justify-content: center;
+    }
+
     .postTitle, .postTitle{
         display: none !important;
     }
@@ -75,6 +84,15 @@
     .light-mode .academy-content .blog-post-text.backgrounded{
         background-color: none;
         border: none;
+    }
+    .userInnerCard .userDesc
+    {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.4em;
     }
 } 
 
@@ -259,16 +277,32 @@ margin-bottom: 2rem;
 flex-direction: column;
 }
 
-.academy-content .userCard .userInnerCard{
-    display: flex;
-    padding-bottom: 1rem;
-}
-
-.userInnerCard .userPhotoCard{
+@media all and (min-width:768px){
+    .academy-content .userCard .userInnerCard{
+        display: flex;
+        padding-bottom: 1rem;
+    }
+    .userInnerCard .userPhotoCard{
    
-    margin-right: 1rem; 
+        margin-right: 1rem; 
+        
+    }
     
 }
+@media all and (max-width:767px){
+    .academy-content .userCard .userInnerCard{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        align-items: center;
+       
+    }
+    .academy-content .userCard .userInnerCard .userPhotoCard{
+        margin-bottom: 1em;
+    }
+
+}
+
 
 .academy-content .userCard .userSocials
 {
@@ -277,15 +311,18 @@ flex-direction: column;
 
 }
 
-.userInnerCard .userDesc
+.dark-mode .userInnerCard .userDesc
 {
-    font-weight: 300;
+      font-weight: 300;
     color:rgb(207, 207, 207);
     font-size: .9rem;
     font-family: 'Roboto', sans-serif;
     line-height: 1.4rem;
 }
 
+
+
+@media all and (min-width: 768px){
 .light-mode .userInnerCard .userDesc
 {
     font-weight: 300;
@@ -303,6 +340,9 @@ flex-direction: column;
     font-family: 'Roboto', sans-serif;
     line-height: 1.4rem;
 }
+}
+
+
 
 .userInnerCard .userDesc h4{
     margin-bottom: 1rem !important;
@@ -405,8 +445,8 @@ position: relative;
 
 .light-mode .academy-content .userCard .userSocials > span > a > svg{
     color:rgba(0,0,0,.5);
-    font-size: 24px;
-    margin-right: 18px;
+    font-size: 36px;
+    
     padding-top: 1rem;
     
 }
@@ -417,10 +457,12 @@ position: relative;
 
 .dark-mode .academy-content .userCard .userSocials > span > a > svg{
     color:rgb(187, 187, 187);
-    font-size: 24px;
-    margin-right: 18px;
-    padding-top: 1rem;
+    font-size: 36px;
     
+    padding-top: 1rem;
+}
+.academy-content .userCard .userSocials > span > a > svg:not(:last-child){
+    margin-right: 18px;
 }
 
 .academy-content .userCard .userSocials > span > a > svg:hover{
@@ -846,3 +888,33 @@ border-bottom: 1px solid #2f2f2f;
     color: #404040;
 }
 
+
+nearestArticles > div {
+    padding: 1em;
+}
+
+.nearestArticles > div.nextArticle a{
+    display: flex;
+    text-align: right;
+    justify-content: unset;
+    line-height: 1.4em;
+    align-items: center;
+    color: #1d56b3;
+    padding-right: 2em;
+    padding-left: 1em;
+}
+
+.nearestArticles > div.prevArticle a{
+    padding-left: 2em;
+    padding-right: 1em;
+    display: flex;
+    text-align: left;
+    justify-content: unset;
+    line-height: 1.4em;
+    align-items: center;
+    color: #1d56b3;
+}
+
+.light-mode .nearestArticles > div a:hover{
+    color: #0096cc;
+}

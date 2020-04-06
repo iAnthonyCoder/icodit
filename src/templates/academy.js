@@ -4,15 +4,12 @@ import HorizontalPostCard from "../components/horizontalPostCard"
 import { window, document } from 'browser-monads';
 import PostCard from "../components/postCard"
 import PostCardSmall from "../components/postCardSmall"
-// import FlipMove from 'react-flip-move';
 import { Link } from 'gatsby'
 import { IoIosArrowForward} from "react-icons/io";
 import { GoSearch } from "react-icons/go";
 import Slider from "react-slick";
 import LogoWindow from "../components/logoWindow";
-// import { DropdownButton, MenuItem } from '../components/dropdown';
 import useDarkMode from "use-dark-mode";
-// import {useIntl} from 'react-intl';
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
@@ -21,8 +18,8 @@ import '../../static/css/postLists.css'
 
 export default function Academy (props) {
   
-  if (window.localStorage.getItem("postPreviewMode") === null) {
-    window.localStorage.setItem('postPreviewMode', 'card');
+  if (window.localStorage.getItem("card") === null) {
+    window.localStorage.setItem('card', 'true');
   }
 
   var settings = {
@@ -80,7 +77,7 @@ export default function Academy (props) {
   const activeSearchInitialState = false
   const modeIcon = useRef();
   const postPreviewIcon = useRef();
-  const configInitialState={"lang":window.localStorage.getItem("lang"), "postPreviewMode":window.localStorage.getItem("postPreviewMode"), "darkMode":window.localStorage.getItem("darkMode")};
+  const configInitialState={"lang":window.localStorage.getItem("lang"), "card":window.localStorage.getItem("card"), "darkMode":window.localStorage.getItem("darkMode")};
   
   const [ config, setConfig ] = React.useState(configInitialState)
   const [ posts, setPosts ] = React.useState(props.posts);
@@ -90,7 +87,7 @@ export default function Academy (props) {
   const [ postListTitle, setPostListTitle ] = React.useState(postListTitleInitialState);
   const [ activeSearch, setActiveSearch ] = React.useState(activeSearchInitialState);
   
-
+  console.log(window.localStorage.getItem("card"))
 
 
   const handleSearchclick = async () => {
@@ -205,7 +202,7 @@ export default function Academy (props) {
  
   
   const handleMenuItemClick = (name, desc) =>{
-
+    console.log(name+","+desc)
     window.localStorage.setItem(name, desc);
     if(name==="darkMode") {darkMode.toggle()}
     //setConfig({lang:localStorage.getItem("lang"), postPreviewMode:localStorage.getItem("postPreviewMode"), darkMode:localStorage.getItem("darkMode")});
@@ -227,7 +224,7 @@ export default function Academy (props) {
       if(postContainer.current.getBoundingClientRect().top>0){sticky=false}
     }
     const enableSticky = () => {
-      navbarSel.style.position="absolute"
+      navbarSel.style.display="none"
       stickyNavbarPostlist.current.style.position="fixed"
       wrapperReplacer.current.style.height="60px";
       logoContainer.current.style.display="flex";
@@ -235,7 +232,7 @@ export default function Academy (props) {
       postPreviewIcon.current.style.display="flex";
     }
     const disableSticky = () => {
-      navbarSel.style.position="fixed"
+      navbarSel.style.display="flex"
       stickyNavbarPostlist.current.style.position="relative"
       wrapperReplacer.current.style.height="0px";
       modeIcon.current.style.display="none";
@@ -251,11 +248,11 @@ export default function Academy (props) {
     function handleResize(){
       var width = window.innerWidth;
       if(width<=1000){
-        setConfig({...config, "postPreviewMode":"vertical"});
+        setConfig({...config, "card":"true"});
         postPreviewIcon.current.style.display="none";
       }
       if(width>1000){
-        setConfig({...config, "postPreviewMode":window.localStorage.getItem("postPreviewMode")});
+        setConfig({...config, "card":window.localStorage.getItem("card")});
         postPreviewIcon.current.style.display="flex";
       }
     }
@@ -270,6 +267,7 @@ export default function Academy (props) {
     };
   }, [])
 
+  console.log(config)
    
 
   return(
@@ -364,11 +362,13 @@ postLink={node.fields.slug}
            <FontAwesomeIcon onClick={darkMode.toggle}  icon={darkMode.value?faSun:faMoon} size="2x"/></div>
            <div id="postPreviewIcon"  ref={postPreviewIcon} >
              {
-               (config.postPreviewMode==="horizontal")?(
-                <FaTh onClick={()=>{handleMenuItemClick("postPreviewMode","vertical")}} />
-               ):(
-                <FaThList onClick={()=>{handleMenuItemClick("postPreviewMode","horizontal")}} />
-               )
+               (config.card==="true")
+               ?(
+                   
+                  (<FaThList onClick={()=>{handleMenuItemClick("card","false")}} />)
+               ):(config.card==="false")?(
+                  <FaTh onClick={()=>{handleMenuItemClick("card","true")}} />
+               ):("error")
              }
           
            
@@ -436,12 +436,16 @@ postLink={node.fields.slug}
                                         (searchVal.searchResult.length<1)?(<h2>No se encontraron coincidencias</h2>):(
                                         searchVal.searchResult.map(({ node }) =>
 
-                                          (config.postPreviewMode==="vertical")?(<div key={node.id} className="postCard30"> <PostCard
-                                          
-                                          post={node.frontmatter}
-                                          postLink={node.fields.slug}
-                                        /></div>):(
-                                        <HorizontalPostCard key={node.id} post={node} />)
+                                        (config.card==="true")?(
+                                          <div className="postCard30" key={node.id}> 
+                                              <PostCard
+                                                  post={node.frontmatter}
+                                                  postLink={node.fields.slug}
+                                              />
+                                          </div>
+                                        ):(config.card==="false")?(
+                                          <HorizontalPostCard post={node} key={node.id}/>
+                                        ):("")
 
 
 
@@ -470,17 +474,19 @@ postLink={node.fields.slug}
  
 
                                         {posts.map(({ node }) =>
-
-                                          (config.postPreviewMode==="vertical")?(<div className="postCard30" key={node.id}> <PostCard
-                                          
-                                          post={node.frontmatter}
-                                          postLink={node.fields.slug}
-                                        /></div>):(
-                                        <HorizontalPostCard post={node} key={node.id} />)
-
-
-
-
+                                          (config.card==="true")?(
+                                            <div className="postCard30" key={node.id}> 
+                                                <PostCard
+                                                    post={node.frontmatter}
+                                                    postLink={node.fields.slug}
+                                                />
+                                            </div>
+                                          ):(config.card==="false")?(
+                                            <HorizontalPostCard post={node} key={node.id}/>
+                                          ):("")
+                              
+                                         
+                  
                                         )}
 
 

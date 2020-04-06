@@ -23,7 +23,7 @@ console.log(title);
       defaultBanner,
       headline,
       // siteLanguage,
-      ogLanguage,
+      //ogLanguage,
       // author,
       // twitter,
       // facebook,
@@ -189,7 +189,7 @@ console.log(title);
         type={article ? 'article' : 'website'}
         url={seo.url}
         locale={lang}
-        name={"anthony958"}
+        name={"anthony952"}
       /> 
       <Twitter title={seo.title} image={seo.image} desc={seo.description} username={"anthony952"} /> 
 {/* 

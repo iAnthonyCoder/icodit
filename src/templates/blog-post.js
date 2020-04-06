@@ -133,7 +133,7 @@ export default ({ data, location, pageContext }) => {
   }, [sticker])
 
 
-
+console.log(prev.frontmatter)
 
 
 
@@ -272,10 +272,12 @@ export default ({ data, location, pageContext }) => {
               {(prevLink)?(
                   <div className="prevArticle">
                     <div><p><span><IoIosArrowBack /></span>PREV POST</p></div>
-                    <PostCard 
+
+              <Link to={prevLink}>{prev.frontmatter.title}</Link> 
+                    {/* <PostCard 
                       post={prev.frontmatter}
                       postLink={prevLink}
-                    />
+                    /> */}
                 
                   </div>
 
@@ -283,10 +285,12 @@ export default ({ data, location, pageContext }) => {
                 {(nextLink)?(
                 <div className="nextArticle">
                 <div><p>NEXT POST<span><IoIosArrowForward /></span></p></div>
-                <PostCard 
+                <Link to={nextLink}>{next.frontmatter.title}</Link> 
+                {/* <PostCard 
                       post={next.frontmatter}
                       postLink={nextLink}
-                    />
+                    /> */}
+
                 </div>
                 ):(<div className="nextArticle"/>)}
               </div>
