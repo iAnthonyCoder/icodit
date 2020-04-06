@@ -2126,11 +2126,7 @@ background-color: #cccccc;
 
 }
 
-#sect3-title
-{
-        margin-top: 4em;
-        margin-bottom: 4em;
-}
+
 #sect4-title
 {
         padding-top: 4em;
@@ -3397,13 +3393,6 @@ background-color: #609b64;
 
 
 }
-#send-form .input-cont
-{
-
-        display: flex;
-        padding: 1.5em;
-        width: 450px;
-}
 
 #send-form #textarea-icon
 {
@@ -4160,11 +4149,7 @@ transition: all .5s ease-in;
     padding-left: 1em;
 }
 
-#sect-title
-{
-        font-size: 2.5em !important;
-    line-height: 1.5em;
-}
+
 
 .profileImg > div:nth-child(1)
 {
