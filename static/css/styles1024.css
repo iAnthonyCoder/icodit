@@ -3158,18 +3158,7 @@ display: flex;
          transition: all .3s ease;
 }
 
-form input[type="text"],form input[type="email"]
-{
 
-        font-size: 1.2em;
-        padding: .5em;
-        width: 400px;
-        background-color: #444444;
-        color: white;
-        font-weight: 200;
-        font-family: "Roboto",sans-serif;
-
-}
 form input[type="text"]:focus,form input[type="email"]:focus
 {
         outline: none;
@@ -3256,15 +3245,13 @@ form
 }
 #submit-form
 {
- width: 450px;
- height: 50px;
+ 
  display: flex;
  text-align: center;
  display: flex;
  justify-content: center;
 background-color: #343434;
  color: white;
- margin-top: 20px;
  cursor: pointer;
 }
 
