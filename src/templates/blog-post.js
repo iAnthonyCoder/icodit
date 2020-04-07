@@ -100,6 +100,7 @@ export default ({ data, location, pageContext }) => {
     }
     const enableSticky = () => {
       setSticker(true);
+      mainNav.style.display="none"
       mainNav.style.position="absolute"
       stickyNav.current.style.position="fixed"
       stickyNav.current.style.height="60px"
@@ -110,6 +111,7 @@ export default ({ data, location, pageContext }) => {
     }
     const disableSticky = () => {
       setSticker(false);
+      mainNav.style.display="flex"
       mainNav.style.position="fixed"
       stickyNav.current.style.position="relative"
       stickyNav.current.style.height="initial"
@@ -133,7 +135,7 @@ export default ({ data, location, pageContext }) => {
   }, [sticker])
 
 
-console.log(prev.frontmatter)
+
 
 
 

@@ -87,7 +87,7 @@ export default function Academy (props) {
   const [ postListTitle, setPostListTitle ] = React.useState(postListTitleInitialState);
   const [ activeSearch, setActiveSearch ] = React.useState(activeSearchInitialState);
   
-  console.log(window.localStorage.getItem("card"))
+
 
 
   const handleSearchclick = async () => {
@@ -202,7 +202,7 @@ export default function Academy (props) {
  
   
   const handleMenuItemClick = (name, desc) =>{
-    console.log(name+","+desc)
+ 
     window.localStorage.setItem(name, desc);
     if(name==="darkMode") {darkMode.toggle()}
     //setConfig({lang:localStorage.getItem("lang"), postPreviewMode:localStorage.getItem("postPreviewMode"), darkMode:localStorage.getItem("darkMode")});
@@ -267,8 +267,6 @@ export default function Academy (props) {
     };
   }, [])
 
-  console.log(config)
-   
 
   return(
    

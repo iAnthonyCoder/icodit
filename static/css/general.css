@@ -7,6 +7,10 @@
 
 
 @media all and (min-width:1200px){
+    #send-form{
+        padding: 2em;
+    }
+
 
     #submit-form
 {
@@ -19,7 +23,7 @@
 
         font-size: 1.2em;
         padding: .5em;
-        width: 400px;
+        width: calc(400px - 1em);
         background-color: #444444;
         color: white;
         font-weight: 200;
@@ -130,7 +134,9 @@
     }
  }
 @media all and (min-width: 768px) and (max-width: 1199px) { 
-
+#send-form{
+    padding-top: 2em;
+}
     #submit-form
 {
  width: 300px;
@@ -142,7 +148,7 @@
 
         font-size: 1.2em;
         padding: .5em;
-        width: 300px;
+        width: calc(300px - 1em);
         background-color: #444444;
         color: white;
         font-weight: 200;
@@ -267,7 +273,9 @@
 
 }
 @media all and (min-width: 1px) and (max-width: 767px){ 
-
+    #send-form{
+        padding: 2em;
+    }
     .left-big-posts-list > section:nth-child(3){
         width: 90%;
         /* display: none; */

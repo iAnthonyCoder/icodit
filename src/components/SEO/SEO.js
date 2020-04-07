@@ -10,7 +10,7 @@ import Twitter from './Twitter'
 
 const SEO = ({ title, desc, banner, pathname, node, lang,  author, postUrl, article }) => {
 
-console.log(title);
+console.log(pathname);
   
   const { site } = useStaticQuery(query)
 
@@ -30,18 +30,22 @@ console.log(title);
     },
   } = site
 
+  const canonical = pathname
+    ? `${siteUrl}${pathname}`
+    : null
+
   const seo = {
     title: title || defaultTitle,
     description: desc || defaultDescription,
     image: `${siteUrl}${banner || defaultBanner}`,
     url: `${siteUrl}${pathname || ''}`,
   }
-  console.log(seo.image)
+
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
 
-  console.log(lang);
+
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -172,8 +176,20 @@ console.log(title);
 
   return (
     <>
-      <Helmet title={seo.title}>
+      <Helmet 
+        link={
+          canonical
+            ? [
+                {
+                  rel: "canonical",
+                  href: canonical,
+                },
+              ]
+            : []
+        }
+        title={seo.title}>
         <html lang={lang} />
+        {/* <meta name="keywords" content={keywords.join(",")} /> */}
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
         <meta name="ICodit" content="Programming tutorials" />

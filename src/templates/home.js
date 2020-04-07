@@ -253,9 +253,9 @@ export default function Home (props) {
 				</div>
 				<form id="send-form" name="send-form">
 	
-		<div className="input-cont dynamic slide-up in-view"><div id="input-icon"><FontAwesomeIcon icon={faEnvelope} size="2x"/></div>
+	
 		{/* <label className="formlabels" htmlFor="htmlFor">Email</label> */}
-		<input className="inputForm" placeholder="Email" required="" type="email" name="email" id="email"/></div>
+		<input className="inputForm" placeholder="Email" required="" type="email" name="email" id="email"/>
 		
 
 	
