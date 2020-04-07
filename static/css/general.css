@@ -200,6 +200,7 @@
         font-weight: 700;
         color: white;
         line-height: 1em;
+        line-height: 1.5em !important;
     }
     h2 {
         font-family: 'Roboto Condensed', sans-serif;

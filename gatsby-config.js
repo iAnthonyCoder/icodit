@@ -1,7 +1,7 @@
 const languages = require('./src/data/languages');
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://www.example.com',
+  URL: NETLIFY_SITE_URL = 'https://www.icodit.net',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
@@ -12,7 +12,7 @@ module.exports = {
   siteMetadata: {
     pathPrefix: '/',
     title: `ICodit - Let's code it!`,
-    titleAlt: 'Icodeit.net',
+    titleAlt: 'ICodit.net',
     description: `Learn greats ways to develop awesome apps`,
     headline: 'Learn about many web dev tools', // Headline for schema.org JSONLD
     url: 'https://icodit.net', // Domain of your site. No trailing slash!
@@ -20,9 +20,9 @@ module.exports = {
     twitterHandle: '@anthony952',
     url: 'https://www.icodit.net',
     siteUrl: `https://www.icodit.net`,
-    logo: '/static/img/logoC.png', // Used for SEO
-    banner: '/static/img/logoC.png', // Used for SEO
-    favicon: '/static/img/logoC.png', // Used for manifest favicon generation
+    logo: '/img/logoC.png', // Used for SEO
+    banner: '/img/logoC.png', // Used for SEO
+    favicon: '/img/logoC.png', // Used for manifest favicon generation
     shortName: 'Icodit', // shortname for manifest. MUST be shorter than 12 characters
     author: 'iAnthonyCoder', // Author for schemaORGJSONLD
 
