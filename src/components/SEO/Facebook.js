@@ -3,6 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 const Facebook = ({ url, name, type, title, desc, image, locale }) => (
+  
   <Helmet>
     {name && <meta property="og:site_name" content={name} />}
     <meta property="og:locale" content={locale} />

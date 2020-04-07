@@ -20,9 +20,9 @@ module.exports = {
     twitterHandle: '@anthony952',
     url: 'https://www.icodit.net',
     siteUrl: `https://www.icodit.net`,
-    logo: '/img/logoC.png', // Used for SEO
-    banner: '/img/logoC.png', // Used for SEO
-    favicon: '/img/logoC.png', // Used for manifest favicon generation
+    logo: '/img/preview.jpg', // Used for SEO
+    banner: '/img/preview.jpg', // Used for SEO
+    favicon: '/img/preview.jpg', // Used for manifest favicon generation
     shortName: 'Icodit', // shortname for manifest. MUST be shorter than 12 characters
     author: 'iAnthonyCoder', // Author for schemaORGJSONLD
 
